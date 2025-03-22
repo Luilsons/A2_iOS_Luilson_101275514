@@ -5,4 +5,15 @@
 //  Created by Luilson Marcos Sousa dos Reis on 2025-03-22.
 //
 
-import Foundation
+import UIKit
+import CoreData
+
+class MainViewController: UIViewController {
+
+    var products: [Product] = []
+    var currentIndex = 0
+
+    let nameLabel = UILabel()
+    let descriptionLabel = UILabel()
+    let priceLabel = UILabel()
+    let providerLabel = UILabel()
