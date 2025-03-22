@@ -124,3 +124,22 @@ class MainViewController: UIViewController {
         let listVC = ProductListViewController()
         navigationController?.pushViewController(listVC, animated: true)
     }
+
+
+    func preloadProductsIfNeeded() {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let request: NSFetchRequest<Product> = Product.fetchRequest()
+        let count = (try? context.count(for: request)) ?? 0
+        if count == 0 {
+            for i in 1...10 {
+                let p = Product(context: context)
+                p.productID = Int64(i)
+                p.name = "Product \(i)"
+                p.productDescription = "Description for product \(i)"
+                p.price = Double(i * 10)
+                p.provider = "Provider \(i)"
+            }
+            try? context.save()
+        }
+    }
+}
