@@ -17,3 +17,13 @@ class MainViewController: UIViewController {
     let descriptionLabel = UILabel()
     let priceLabel = UILabel()
     let providerLabel = UILabel()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .white
+        title = "Product Viewer"
+        setupUI()
+        preloadProductsIfNeeded()
+        fetchProducts()
+        displayProduct()
+    }
