@@ -96,3 +96,9 @@ class MainViewController: UIViewController {
                displayProduct()
            }
        }
+
+
+    @objc func openAddProduct() {
+        let addVC = AddProductViewController()
+        navigationController?.pushViewController(addVC, animated: true)
+    }
