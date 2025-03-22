@@ -11,10 +11,22 @@ import CoreData
 class ProductListViewController: UITableViewController {
     
     var products: [Product] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "All Products"
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         fetchProducts()
     }
+    
+    func fetchProducts() {
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            let fetchRequest: NSFetchRequest<Product> = Product.fetchRequest()
+            do {
+                products = try context.fetch(fetchRequest)
+                tableView.reloadData()
+            } catch {
+                print("Failed to fetch: \(error.localizedDescription)")
+            }
+        }
+
