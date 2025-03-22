@@ -40,3 +40,21 @@ class MainViewController: UIViewController {
                 stack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
                 stack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
             ])
+
+        let prevButton = makeButton(title: "Previous", action: #selector(prevProduct))
+               let nextButton = makeButton(title: "Next", action: #selector(nextProduct))
+               let addButton = makeButton(title: "Add Product", action: #selector(openAddProduct))
+               let searchButton = makeButton(title: "Search", action: #selector(searchProduct))
+               let viewAllButton = makeButton(title: "View All", action: #selector(openProductList))
+
+               let buttonStack = UIStackView(arrangedSubviews: [prevButton, nextButton, addButton, searchButton, viewAllButton])
+               buttonStack.axis = .vertical
+               buttonStack.spacing = 10
+               buttonStack.translatesAutoresizingMaskIntoConstraints = false
+               view.addSubview(buttonStack)
+
+               NSLayoutConstraint.activate([
+                   buttonStack.topAnchor.constraint(equalTo: stack.bottomAnchor, constant: 30),
+                   buttonStack.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+               ])
+           }
