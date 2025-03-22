@@ -58,3 +58,11 @@ class MainViewController: UIViewController {
                    buttonStack.centerXAnchor.constraint(equalTo: view.centerXAnchor)
                ])
            }
+
+
+    func makeButton(title: String, action: Selector) -> UIButton {
+        let button = UIButton(type: .system)
+        button.setTitle(title, for: .normal)
+        button.addTarget(self, action: action, for: .touchUpInside)
+        return button
+    }
