@@ -29,4 +29,8 @@ class ProductListViewController: UITableViewController {
                 print("Failed to fetch: \(error.localizedDescription)")
             }
         }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return products.count
+    }
 
