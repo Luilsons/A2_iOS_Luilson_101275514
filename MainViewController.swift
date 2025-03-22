@@ -82,3 +82,17 @@ class MainViewController: UIViewController {
         priceLabel.text = "Price: $\(p.price)"
         providerLabel.text = "Provider: \(p.provider ?? "")"
     }
+
+    @objc func nextProduct() {
+           if currentIndex < products.count - 1 {
+               currentIndex += 1
+               displayProduct()
+           }
+       }
+
+       @objc func prevProduct() {
+           if currentIndex > 0 {
+               currentIndex -= 1
+               displayProduct()
+           }
+       }
