@@ -33,4 +33,12 @@ class ProductListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return products.count
     }
-
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+          let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+          let product = products[indexPath.row]
+          cell.textLabel?.text = "\(product.name ?? "") - \(product.productDescription ?? "")"
+          cell.textLabel?.numberOfLines = 0
+          return cell
+      }
+  }
