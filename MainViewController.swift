@@ -118,3 +118,9 @@ class MainViewController: UIViewController {
            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
            present(alert, animated: true)
        }
+
+
+    @objc func openProductList() {
+        let listVC = ProductListViewController()
+        navigationController?.pushViewController(listVC, animated: true)
+    }
