@@ -21,3 +21,31 @@ class AddProductViewController: UIViewController {
         title = "Add Product"
         setupForm()
     }
+    
+    func setupForm() {
+        nameField.placeholder = "Product Name"
+        descriptionField.placeholder = "Description"
+        priceField.placeholder = "Price"
+        priceField.keyboardType = .decimalPad
+        providerField.placeholder = "Provider"
+
+        let saveButton = UIButton(type: .system)
+        saveButton.setTitle("Save", for: .normal)
+        saveButton.addTarget(self, action: #selector(saveProduct), for: .touchUpInside)
+
+        let stack = UIStackView(arrangedSubviews: [nameField, descriptionField, priceField, providerField, saveButton])
+        stack.axis = .vertical
+        stack.spacing = 12
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(stack)
+
+        NSLayoutConstraint.activate([
+            stack.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            stack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            stack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+        ])
+
+        [nameField, descriptionField, priceField, providerField].forEach { field in
+            field.borderStyle = .roundedRect
+        }
+    }
