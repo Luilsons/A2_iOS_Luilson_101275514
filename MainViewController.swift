@@ -66,3 +66,19 @@ class MainViewController: UIViewController {
         button.addTarget(self, action: action, for: .touchUpInside)
         return button
     }
+
+
+    func fetchProducts() {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let fetchRequest: NSFetchRequest<Product> = Product.fetchRequest()
+        products = (try? context.fetch(fetchRequest)) ?? []
+    }
+
+    func displayProduct() {
+        guard !products.isEmpty else { return }
+        let p = products[currentIndex]
+        nameLabel.text = "Name: \(p.name ?? "")"
+        descriptionLabel.text = "Description: \(p.productDescription ?? "")"
+        priceLabel.text = "Price: $\(p.price)"
+        providerLabel.text = "Provider: \(p.provider ?? "")"
+    }
