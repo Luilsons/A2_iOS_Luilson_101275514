@@ -102,3 +102,19 @@ class MainViewController: UIViewController {
         let addVC = AddProductViewController()
         navigationController?.pushViewController(addVC, animated: true)
     }
+
+    @objc func searchProduct() {
+           let alert = UIAlertController(title: "Search", message: "Enter product name", preferredStyle: .alert)
+           alert.addTextField()
+           alert.addAction(UIAlertAction(title: "Search", style: .default) { _ in
+               guard let term = alert.textFields?.first?.text else { return }
+               let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+               let fetch: NSFetchRequest<Product> = Product.fetchRequest()
+               fetch.predicate = NSPredicate(format: "name CONTAINS[cd] %@", term)
+               self.products = (try? context.fetch(fetch)) ?? []
+               self.currentIndex = 0
+               self.displayProduct()
+           })
+           alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+           present(alert, animated: true)
+       }
