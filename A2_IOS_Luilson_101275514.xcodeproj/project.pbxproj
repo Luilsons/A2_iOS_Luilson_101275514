@@ -17,6 +17,7 @@
 		88F08EDE2D8F3A7600CB7F73 /* A2_IOS_Luilson_101275514UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F08EDD2D8F3A7600CB7F73 /* A2_IOS_Luilson_101275514UITests.swift */; };
 		88F08EE02D8F3A7600CB7F73 /* A2_IOS_Luilson_101275514UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F08EDF2D8F3A7600CB7F73 /* A2_IOS_Luilson_101275514UITestsLaunchTests.swift */; };
 		88F08EED2D8F3DDF00CB7F73 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F08EEC2D8F3DDF00CB7F73 /* MainViewController.swift */; };
+		88F08EEF2D8F4CC200CB7F73 /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F08EEE2D8F4CC200CB7F73 /* AddProductViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		88F08EDD2D8F3A7600CB7F73 /* A2_IOS_Luilson_101275514UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A2_IOS_Luilson_101275514UITests.swift; sourceTree = "<group>"; };
 		88F08EDF2D8F3A7600CB7F73 /* A2_IOS_Luilson_101275514UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A2_IOS_Luilson_101275514UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		88F08EEC2D8F3DDF00CB7F73 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		88F08EEE2D8F4CC200CB7F73 /* AddProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		88F08EAD2D8F3A7500CB7F73 = {
 			isa = PBXGroup;
 			children = (
+				88F08EEE2D8F4CC200CB7F73 /* AddProductViewController.swift */,
 				88F08EEC2D8F3DDF00CB7F73 /* MainViewController.swift */,
 				88F08EB82D8F3A7500CB7F73 /* A2_IOS_Luilson_101275514 */,
 				88F08ED22D8F3A7600CB7F73 /* A2_IOS_Luilson_101275514Tests */,
@@ -262,6 +265,7 @@
 			files = (
 				88F08EC42D8F3A7500CB7F73 /* A2_IOS_Luilson_101275514.xcdatamodeld in Sources */,
 				88F08EBE2D8F3A7500CB7F73 /* ViewController.swift in Sources */,
+				88F08EEF2D8F4CC200CB7F73 /* AddProductViewController.swift in Sources */,
 				88F08EBA2D8F3A7500CB7F73 /* AppDelegate.swift in Sources */,
 				88F08EBC2D8F3A7500CB7F73 /* SceneDelegate.swift in Sources */,
 				88F08EED2D8F3DDF00CB7F73 /* MainViewController.swift in Sources */,
