@@ -9,15 +9,15 @@ import UIKit
 import CoreData
 
 class MainViewController: UIViewController {
-
+    
     var products: [Product] = []
     var currentIndex = 0
-
+    
     let nameLabel = UILabel()
     let descriptionLabel = UILabel()
     let priceLabel = UILabel()
     let providerLabel = UILabel()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -27,3 +27,16 @@ class MainViewController: UIViewController {
         fetchProducts()
         displayProduct()
     }
+    
+    func setupUI() {
+            let stack = UIStackView(arrangedSubviews: [nameLabel, descriptionLabel, priceLabel, providerLabel])
+            stack.axis = .vertical
+            stack.spacing = 10
+            stack.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(stack)
+
+            NSLayoutConstraint.activate([
+                stack.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                stack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+                stack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+            ])
